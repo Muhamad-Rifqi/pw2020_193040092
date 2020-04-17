@@ -1,6 +1,6 @@
 <?php 
     // menghubungnkan dengan file php lainnya
-    require 'asset/php/function.php';
+    require 'php/function.php';
 
     //melakukan query
     $makanan = query("SELECT * FROM makanan")
@@ -13,6 +13,7 @@
     </head>
     <body>
         <div class="container">
+            <h1>Makanan Khas Nusantara</h1>
             <?php foreach ($makanan as $m) : ?>
                 <p class="nama">
                     <a href="php/detail.php?id=<?=$m['id']?>">
