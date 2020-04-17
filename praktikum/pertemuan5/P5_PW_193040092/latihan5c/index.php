@@ -9,12 +9,13 @@
 <html>
     <head>
         <title>Makanan Nusantara</title>
+        <link rel="stylesheet" type="text/css" href="asset/css/style.css">
     </head>
     <body class="body">
         <div class="container">
             <?php foreach ($makanan as $m) : ?>
                 <p class="nama">
-                    <a href="asset/php/detail.php?id=$m['id'] ?>">
+                    <a href="php/detail.php?id=<?=$m['id']?>">
                         <?= $m["Nama"] ?>
                     </a>
                 </p>

@@ -3,7 +3,7 @@
     //Menegecek apakah ada id yang di kirimkan
     //jika tidak ada maka akan dikembalikan ke index.php
     if (!isset($_GET['id'])){
-        header("location: ../../index.php");
+        header("location: ../index.php");
         exit;
     } 
 
@@ -27,16 +27,15 @@
  <body>
     <div class="container">
         <div class="gambar">
-            <img src="../img/<?= $m["Gambar"]; ?>" alt="">
+            <img src="../asset/img/<?= $m["Gambar"]; ?>" alt="">
         </div>
             <div class="keterangan">
-                <p><?= $m["Gambar"]; ?></p>
                 <p><?= $m["Nama"]; ?></p>
                 <p><?= $m["Asal"]; ?></p>
                 <p><?= $m["Deskripsi"]; ?></p>
                 <p><?= $m["Harga"]; ?></p>
             </div>
-        <button class="tombol_kembali"> <a href="../../index.php">kembali</a></button>
+        <button class="tombol_kembali"> <a href="../index.php">kembali</a></button>
     </div>
  </body>
  </html>
