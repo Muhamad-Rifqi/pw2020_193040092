@@ -11,7 +11,7 @@
         <title>Makanan Nusantara</title>
         <link rel="stylesheet" type="text/css" href="asset/css/style.css">
     </head>
-    <body class="body">
+    <body>
         <div class="container">
             <?php foreach ($makanan as $m) : ?>
                 <p class="nama">
