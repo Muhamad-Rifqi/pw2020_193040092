@@ -9,9 +9,6 @@ if ($un == "admin" and $pwd = "12345") {
 }
 
 
-
-
-
 // print($un);
 // print($pwd);
 
