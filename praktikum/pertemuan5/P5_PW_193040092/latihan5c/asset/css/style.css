@@ -15,20 +15,14 @@ h1{
 }
 
 .container{
-	width: 500px;
-	border: 2px solid black;
+  width: 500px;
+  border: 2px solid black;
   padding: 10px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.gambar{
-	width: 300px;
-	height: 300px;
+.gambar, img{
+	width: 200px;
+	height: 200px;
 }
-
-img{
-	width: 300px;
-	height: 300px;
-}
-
