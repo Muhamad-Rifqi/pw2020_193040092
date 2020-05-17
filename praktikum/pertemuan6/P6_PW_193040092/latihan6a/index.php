@@ -16,7 +16,7 @@
             <h1>Makanan Khas Nusantara</h1>
             <?php foreach ($makanan as $m) : ?>
                 <p class="nama">
-                    <a href="php/admin.php?id=<?=$m['id']?>">
+                    <a href="php/detail.php?id=<?=$m['id']?>">
                         <?= $m["Nama"] ?>
                     </a>
                 </p>
