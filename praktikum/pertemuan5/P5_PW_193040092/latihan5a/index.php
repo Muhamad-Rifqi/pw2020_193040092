@@ -2,7 +2,7 @@
   //Melakukan Koneksi ke database
   $conn = mysqli_connect("localhost", "root", "") or die ("Koneksi ke Database Gagal");
 
-  //Memili Database
+  //Memilih Database
   mysqli_select_db($conn, "tubes_193040092") or die ("Database Salah");
 
   //query mengambil objek dari tabel di dalam Database
@@ -12,7 +12,7 @@
 <html>
     <head>
         <title>Makanan Nusantara</title>
-        <link rel="stylesheet" href="asset/css/style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body class="body">
         <h1 class="judul">Makanan Khas Nusantara</h1>

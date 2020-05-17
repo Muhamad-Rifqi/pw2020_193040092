@@ -9,7 +9,7 @@
 <html>
     <head>
         <title>Makanan Nusantara</title>
-        <link rel="stylesheet" type="text/css" href="asset/css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
         <div class="container">

@@ -1,6 +1,6 @@
 <?php 
     // menghubugnkan dengan file php lainnya
-    require 'asset/php/function.php';
+    require 'php/function.php';
 
     //melakukan query
     $makanan = query("SELECT * FROM makanan")

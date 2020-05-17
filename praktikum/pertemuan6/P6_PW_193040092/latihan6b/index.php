@@ -13,7 +13,7 @@
 <div class="container">
     <?php foreach ($makanan as $row) : ?>
         <p class="nama">
-            <a href="php/detail.php?id=<?= $row['id'] ?>">
+            <a href="php/admin.php?id=<?= $row['id'] ?>">
                 <?= $row["Nama"] ?>
             </a>
         </p>
