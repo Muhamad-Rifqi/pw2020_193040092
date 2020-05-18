@@ -26,13 +26,13 @@
 
         $nama = htmlspecialchars($data['Nama']);
         $gambar = htmlspecialchars($data['Gambar']);
-        $cara = htmlspecialchars($data['Asal']);
-        $asal = htmlspecialchars($data['Deskripsi']);
+        $asal = htmlspecialchars($data['Asal']);
+        $deskripsi = htmlspecialchars($data['Deskripsi']);
         $harga = htmlspecialchars($data['Harga']);
 
         $query = "INSERT INTO makanan
                         VALUES
-                        ('', '$Nama', '$gambar', '$Asal', '$Deskripsi', '$Harga')";
+                        ('', '$nama', '$gambar', '$asal', '$deskripsi', '$harga')";
         mysqli_query($conn, $query);
 
         return mysqli_affected_rows($conn);
@@ -48,27 +48,24 @@
 
     function ubah($data)
 {
-    $conn = koneksi();
+    $global = $conn;
 
-    $id = htmlspecialchars($data['id']);
+    $id = $data['id'];
     $nama = htmlspecialchars($data['Nama']);
     $gambar = htmlspecialchars($data['Gambar']);
-    $cara = htmlspecialchars($data['Asal']);
-    $asal = htmlspecialchars($data['Deskripsi']);
+    $asal = htmlspecialchars($data['Asal']);
+    $deskripsi = htmlspecialchars($data['Deskripsi']);
     $harga = htmlspecialchars($data['Harga']);
 
-    $query = "UPDATE makanan
-            SET 
+    $queryubah = "UPDATE makanan SET 
             nama = '$Nama',
             gambar = '$Gambar',
-            cara = '$Asal',
-            asal = '$Deskripsi',
+            asal = '$Asal',
+            deskripsi = '$Deskripsi',
             harga = '$Harga'
-            WHERE  id = '$id'
-            ";
+            WHERE  id = '$id' ";
 
-
-    mysqli_query($conn, $query);
+    mysqli_query($conn, $queryubah);
     return mysqli_affected_rows($conn);
 }
 ?>    

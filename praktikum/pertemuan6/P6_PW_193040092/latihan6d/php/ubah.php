@@ -7,12 +7,12 @@ $m = query("SELECT * FROM makanan WHERE id = $id")[0];
 if (isset($_POST['ubah'])) {
     if (tambah($_POST) > 0) {
         echo "<script>
-                    alert('Data berhasil ditambahkan!');
+                    alert('Data berhasil diubah!');
                     document.location.href = 'admin.php';
                 </script>";
     } else {
         echo "<script>
-                    alert('Data gagal ditambahkan!');
+                    alert('Data gagal diubah!');
                     document.location.href = 'admin.php';
                 </script>";
     }
@@ -30,24 +30,24 @@ if (isset($_POST['ubah'])) {
         <ul>  
                 <input type="hidden" name="id" id="id" required value="<?= $m['id']; ?>"><br><br>
             <li>
-                <label for="nama">Nama Makanan :</label><br>
-                <input type="text" name="nama" id="nama" required value="<?= $m['nama']; ?>"><br><br>
+                <label for="Nama">Nama Makanan :</label><br>
+                <input type="text" name="Nama" id="Nama" required value="<?= $m['Nama']; ?>"><br><br>
             </li>
             <li>
-                <label for="gambar">Gambar Makanan :</label><br>
-                <input type="file" name="gambar" id="gambar" required value="<?= $m['gambar']; ?>"><br><br>
+                <label for="Gambar">Gambar Makanan :</label><br>
+                <input type="text" name="Gambar" id="Gambar" required value="<?= $m['Gambar']; ?>"><br><br>
             </li>
             <li>
-                <label for="asal">Asal Makanan :</label><br>
-                <input type="text" name="asal" id="asal" required value="<?= $m['asal']; ?>"><br><br>
+                <label for="Asal">Asal Makanan :</label><br>
+                <input type="text" name="Asal" id="Asal" required value="<?= $m['Asal']; ?>"><br><br>
             </li>
             <li>
-                <label for="deskripsi">Deskripsi Makanan :</label><br>
-                <input type="text" name="deskripsi" id="deskripsi" required value="<?= $m['deskripsi']; ?>"><br><br>
+                <label for="Deskripsi">Deskripsi Makanan :</label><br>
+                <input type="text" name="Deskripsi" id="Deskripsi" required value="<?= $m['Deskripsi']; ?>"><br><br>
             </li>
             <li>
-                <label for="harga">Harga Makanan :</label><br>
-                <input type="text" name="harga" id="harga" required value="<?= $m['nama']; ?>"><br><br>
+                <label for="Harga">Harga Makanan :</label><br>
+                <input type="text" name="Harga" id="Harga" required value="<?= $m['Harga']; ?>"><br><br>
             </li>
             <br>
             <button type="submit" name="ubah">Ubah Data!</button>

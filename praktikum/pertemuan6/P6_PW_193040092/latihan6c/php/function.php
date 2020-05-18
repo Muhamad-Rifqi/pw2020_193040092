@@ -26,13 +26,13 @@
 
         $nama = htmlspecialchars($data['Nama']);
         $gambar = htmlspecialchars($data['Gambar']);
-        $cara = htmlspecialchars($data['Asal']);
-        $asal = htmlspecialchars($data['Deskripsi']);
+        $asal = htmlspecialchars($data['Asal']);
+        $deskripsi = htmlspecialchars($data['Deskripsi']);
         $harga = htmlspecialchars($data['Harga']);
 
         $query = "INSERT INTO makanan
                         VALUES
-                        ('', '$Nama', '$gambar', '$Asal', '$Deskripsi', '$Harga')";
+                        ('', '$nama', '$gambar', '$asal', '$deskripsi', '$harga')";
         mysqli_query($conn, $query);
 
         return mysqli_affected_rows($conn);
