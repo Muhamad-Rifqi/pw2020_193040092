@@ -1,3 +1,56 @@
+<?php 
+session_start();
+require 'function.php';
+
+// Melakukan Pengecekan user Login
+if (isset($_SESSION['username']))
+{
+    header("location: admin.php");
+    exit;
+}
+
+// Login
+if (isset($_POST['submit']))
+{
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $cek_user = mysqli_query(koneksi(), "SELECT * FROM user WHERE username = '$username'");
+}
+
+// Mencocokan username dan password
+if (mysqli_num_rows($cek_user) > 0)
+{
+    $row = mysqli_fetch_assoc($cek_user);
+    if ($password == $row['password'])
+    {
+        $_SESSION['username'] = $_POST['username'];
+        $_SESSION['hash'] = $row['id'];
+    }
+    if ($row['id'] == $_SESSION['hash'])
+    {
+        header ("location: admin.php");
+        die;
+    }
+    header ("location: ../index.php");
+    die;
+}
+$error = true;
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <form action="" method="post">
 <?php if (isset($error)) : ?>
     <p>Username atau Password salah</p>

@@ -60,6 +60,10 @@ if (isset($_GET['cari'])) {
 		<?php endforeach; ?>
 		<?php endif; ?>
 		</div>
+
+		<div class="logout">
+			<a href="logout.php">Logout</a>
+		</div>
   	</table>
 </body>
 </html>
