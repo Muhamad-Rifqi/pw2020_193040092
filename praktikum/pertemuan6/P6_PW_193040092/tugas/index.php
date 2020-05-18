@@ -35,7 +35,7 @@
             </a>
         </p>
     <?php endforeach; ?>
-    <?php endif; ?>
+    <?php endif; ?> 
 
     <a href="php/admin.php"><button>Halaman Admin</button></a>
 </div>
