@@ -1,31 +1,26 @@
 <?php
-require 'function.php' ;
+require 'function.php';
+$makanan = query("SELECT * FROM makanan");
 
-if (isset($_GET['cari'])){
-    $keyword = $_GET['keyword'];
-    $alatmusik = query ("SELECT * FROM makanan WHERE
-    Nama LIKE '%$keyword%'OR
-    Gambar LIKE '%$keyword%'OR
-    Asal LIKE '%$keyword%'OR
-    Deskripsi LIKE '%$keyword%'OR
-    Harga LIKE '%$keyword%' ");
 
-}else{
-    $alatmusik = query("SELECT * FROM alat_musik");
-
-}
-
+if (isset($_GET['cari'])) {
+	$makanan = cari($_GET['keyword']);
+	}
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Halaman Admin</title>
-	<link rel="stylesheet" type="text/css" href="../assets/css/styleadmin.css">
+	<link rel="stylesheet" type="text/css" href="../css/styleadmin.css">
 </head>
 <body>
   <div class="container">
   	<div class="add"><a href="tambah.php">Tambah Data</a></div>
+	  	<form action="" method="get">
+		  <input type="text" name="keyword" autofocus>
+		  <button type="submit" name="cari">Cari!</button>
+		</form>
   	<table border="1" cellpadding="13" cellspacing="0">
   		<tr>
 			<th>#</th>
@@ -37,6 +32,14 @@ if (isset($_GET['cari'])){
 			<th>Harga</th>
 		</tr>
 
+	<?php if (empty($makanan)) : ?>
+	<tr>
+		<td colspan="7">
+		 	<h1>Data tidak di temukan</h1>
+		</td>
+	</tr>
+
+		<?php else : ?>
 		<?php $i=1; ?>
 		<?php foreach ($makanan as $m) : ?>
 
@@ -44,8 +47,8 @@ if (isset($_GET['cari'])){
 			<tr>
 				<td><?=$i;?></td>
 				<td>
-					<a href="ubah.php?id= <?= $row['id']; ?>"><button>Ubah</button></a>
-            		<a href="hapus.php?id= <?= $row['id']; ?>" onclick="return confirm('hapus data?')"><button>Hapus</button></a>
+					<a href="ubah.php?id= <?= $m['id']; ?>"><button>Ubah</button></a>
+            		<a href="hapus.php?id= <?= $m['id']; ?>" onclick="return confirm('hapus data?')"><button>Hapus</button></a>
 				</td>
 				<td><img src="../assets/img/<?= $m['Gambar']; ?>"></td>
 				<td><?= $m['Nama']; ?></td>
@@ -55,6 +58,7 @@ if (isset($_GET['cari'])){
 			</tr>
 			<?php $i++; ?>
 		<?php endforeach; ?>
+		<?php endif; ?>
 		</div>
   	</table>
 </body>

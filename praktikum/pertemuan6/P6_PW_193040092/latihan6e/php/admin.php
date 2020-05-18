@@ -1,6 +1,11 @@
 <?php
 require 'function.php';
 $makanan = query("SELECT * FROM makanan");
+
+
+if (isset($_GET['cari'])) {
+	$makanan = cari($_GET['keyword']);
+	}
 ?>
 
 <!DOCTYPE html>
@@ -12,6 +17,10 @@ $makanan = query("SELECT * FROM makanan");
 <body>
   <div class="container">
   	<div class="add"><a href="tambah.php">Tambah Data</a></div>
+	  	<form action="" method="get">
+		  <input type="text" name="keyword" autofocus>
+		  <button type="submit" name="cari">Cari!</button>
+		</form>
   	<table border="1" cellpadding="13" cellspacing="0">
   		<tr>
 			<th>#</th>
@@ -23,6 +32,14 @@ $makanan = query("SELECT * FROM makanan");
 			<th>Harga</th>
 		</tr>
 
+	<?php if (empty($makanan)) : ?>
+	<tr>
+		<td colspan="7">
+		 	<h1>Data tidak di temukan</h1>
+		</td>
+	</tr>
+
+		<?php else : ?>
 		<?php $i=1; ?>
 		<?php foreach ($makanan as $m) : ?>
 
@@ -41,6 +58,7 @@ $makanan = query("SELECT * FROM makanan");
 			</tr>
 			<?php $i++; ?>
 		<?php endforeach; ?>
+		<?php endif; ?>
 		</div>
   	</table>
 </body>

@@ -13,7 +13,8 @@
         $result = mysqli_query($conn , "$sql");
 
         $rows = [];
-        while ($row = mysqli_fetch_assoc($result)){
+        while ($row = mysqli_fetch_assoc($result))
+        {
             $rows[] = $row;
         }
 
@@ -74,5 +75,19 @@
 
     mysqli_query($conn, $queryubah);
     return mysqli_affected_rows($conn);
+}
+
+// Mencari Data
+function cari($keyword) {
+    $query = "SELECT * FROM makanan
+                WHERE
+                gambar LIKE '%$keyword%' OR
+                nama Like '%$keyword%' OR
+                asal Like '%$keyword%' OR
+                deskripsi Like '%$keyword%' OR
+                harga LIKE '%$keyword%'
+                ";
+
+                return query($query);
 }
 ?>    

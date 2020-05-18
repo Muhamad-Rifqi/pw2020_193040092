@@ -13,31 +13,36 @@
         $result = mysqli_query($conn , "$sql");
 
         $rows = [];
-        while ($row = mysqli_fetch_assoc($result)){
+        while ($row = mysqli_fetch_assoc($result))
+        {
             $rows[] = $row;
         }
 
         return $rows;
     }
 
+
+// Fungsi tambah
      function tambah($data)
     {
         $conn = koneksi();
 
-        $nama = htmlspecialchars($data['Nama']);
         $gambar = htmlspecialchars($data['Gambar']);
-        $cara = htmlspecialchars($data['Asal']);
-        $asal = htmlspecialchars($data['Deskripsi']);
+        $nama = htmlspecialchars($data['Nama']);
+        $asal = htmlspecialchars($data['Asal']);
+        $deskripsi = htmlspecialchars($data['Deskripsi']);
         $harga = htmlspecialchars($data['Harga']);
 
         $query = "INSERT INTO makanan
                         VALUES
-                        ('', '$Nama', '$gambar', '$Asal', '$Deskripsi', '$Harga')";
+                        ('', '$gambar', '$nama', '$asal', '$deskripsi', '$harga')";
         mysqli_query($conn, $query);
 
         return mysqli_affected_rows($conn);
     }
 
+
+// Fungsi Hapus
     function hapus($id)
     {
         $conn = koneksi();
@@ -46,29 +51,43 @@
         return mysqli_affected_rows($conn);
     }
 
+    
+// Fungsi Ubah Data
     function ubah($data)
 {
     $conn = koneksi();
 
-    $id = htmlspecialchars($data['id']);
-    $nama = htmlspecialchars($data['Nama']);
+    $id = $data['id'];
     $gambar = htmlspecialchars($data['Gambar']);
-    $cara = htmlspecialchars($data['Asal']);
-    $asal = htmlspecialchars($data['Deskripsi']);
+    $nama = htmlspecialchars($data['Nama']);
+    $asal = htmlspecialchars($data['Asal']);
+    $deskripsi = htmlspecialchars($data['Deskripsi']);
     $harga = htmlspecialchars($data['Harga']);
 
-    $query = "UPDATE makanan
-            SET 
-            nama = '$Nama',
-            gambar = '$Gambar',
-            cara = '$Asal',
-            asal = '$Deskripsi',
-            harga = '$Harga'
-            WHERE  id = '$id'
-            ";
+    $queryubah = "UPDATE makanan
+             SET 
+            Gambar = '$gambar',
+            Nama = '$nama',
+            Asal = '$asal',
+            Deskripsi = '$deskripsi',
+            Harga = '$harga'
+            WHERE  id = '$id' ";
 
-
-    mysqli_query($conn, $query);
+    mysqli_query($conn, $queryubah);
     return mysqli_affected_rows($conn);
+}
+
+// Mencari Data
+function cari($keyword) {
+    $query = "SELECT * FROM makanan
+                WHERE
+                gambar LIKE '%$keyword%' OR
+                nama Like '%$keyword%' OR
+                asal Like '%$keyword%' OR
+                deskripsi Like '%$keyword%' OR
+                harga LIKE '%$keyword%'
+                ";
+
+                return query($query);
 }
 ?>    
