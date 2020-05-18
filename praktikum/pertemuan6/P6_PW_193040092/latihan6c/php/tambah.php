@@ -31,15 +31,15 @@ if (isset($_POST['tambah'])) {
             </li>
             <li>
                 <label for="gambar">Gambar Makanan :</label><br>
-                <input type="text" name="gambar" id="gambar" required><br><br>
+                <input type="file" name="gambar" id="gambar" required><br><br>
             </li>
             <li>
-                <label for="cara">Asal Makanan :</label><br>
-                <input type="text" name="cara" id="cara" required><br><br>
-            </li>
-            <li>
-                <label for="asal">Deskripsi Makanan :</label><br>
+                <label for="asal">Asal Makanan :</label><br>
                 <input type="text" name="asal" id="asal" required><br><br>
+            </li>
+            <li>
+                <label for="deskripsi">Deskripsi Makanan :</label><br>
+                <input type="text" name="deskripsi" id="deskripsi" required><br><br>
             </li>
             <li>
                 <label for="harga">Harga Makanan :</label><br>

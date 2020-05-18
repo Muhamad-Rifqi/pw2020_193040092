@@ -7,11 +7,12 @@ $makanan = query("SELECT * FROM makanan");
 <html>
 <head>
 	<title>Halaman Admin</title>
-	<link rel="stylesheet" type="text/css" href="../assets/css/styleadmin.css">
+	<link rel="stylesheet" type="text/css" href="../css/styleadmin.css">
 </head>
 <body>
   <div class="container">
   	<table border="1" cellpadding="13" cellspacing="0">
+	  <div class="add"><a href="tambah.php">Tambah Data</a></div>
   		<tr>
 			<th>#</th>
 			<th>Opsi</th>
@@ -30,7 +31,7 @@ $makanan = query("SELECT * FROM makanan");
 				<td><?=$i;?></td>
 				<td>
 					<a href=""><button>Ubah</button></a>
-					<a href="hapus.php?id= <?= $row['id']; ?>" onclick="return confirm('hapus data?')"><button>Hapus</button></a>
+					<a href="hapus.php?id= <?= $m['id']; ?>" onclick="return confirm('hapus data?')"><button>Hapus</button></a>
 				</td>
 				<td><img src="../assets/img/<?= $m['Gambar']; ?>"></td>
 				<td><?= $m['Nama']; ?></td>

@@ -7,7 +7,7 @@ $makanan = query("SELECT * FROM makanan");
 <html>
 <head>
 	<title>Halaman Admin</title>
-	<link rel="stylesheet" type="text/css" href="../assets/css/styleadmin.css">
+	<link rel="stylesheet" type="text/css" href="../css/styleadmin.css">
 </head>
 <body>
   <div class="container">

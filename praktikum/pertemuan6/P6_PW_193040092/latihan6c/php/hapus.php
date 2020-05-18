@@ -1,5 +1,5 @@
 <?php
-require 'functions.php';
+require 'function.php';
 $id = $_GET['id'];
 
     if (hapus($id) > 0) {
@@ -12,5 +12,13 @@ $id = $_GET['id'];
                     alert('Data gagal dihapus!');
                     document.location.href = 'admin.php';
                 </script>";
+    }
+
+    function hapus($id)
+    {
+        $conn = koneksi();
+        mysqli_query($conn, "DELETE FROM makanan WHERE id = $id");
+
+        return mysqli_affected_rows($conn);
     }
 ?>

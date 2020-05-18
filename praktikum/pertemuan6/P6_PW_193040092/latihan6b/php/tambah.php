@@ -26,29 +26,29 @@ if (isset($_POST['tambah'])) {
     <form action="" method="post">
         <ul>
             <li>
-                <label for="nama">Nama Makanan :</label><br>
-                <input type="text" name="nama" id="nama" required><br><br>
+                <label for="Nama">Nama Makanan :</label><br>
+                <input type="text" name="Nama" id="Nama" required><br><br>
             </li>
             <li>
-                <label for="gambar">Gambar Makanan :</label><br>
-                <input type="text" name="gambar" id="gambar" required><br><br>
+                <label for="Gambar">Gambar Makanan :</label><br>
+                <input type="file" name="Gambar" id="Gambar" required><br><br>
             </li>
             <li>
-                <label for="cara">Asal Makanan :</label><br>
-                <input type="text" name="cara" id="cara" required><br><br>
+                <label for="Asal">Asal Makanan :</label><br>
+                <input type="text" name="Asal" id="Asal" required><br><br>
             </li>
             <li>
-                <label for="asal">Deskripsi Makanan :</label><br>
-                <input type="text" name="asal" id="asal" required><br><br>
+                <label for="Deskripsi">Deskripsi Makanan :</label><br>
+                <input type="text" name="Deskripsi" id="Deskripsi" required><br><br>
             </li>
             <li>
-                <label for="harga">Harga Makanan :</label><br>
-                <input type="text" name="harga" id="harga" required><br><br>
+                <label for="Harga">Harga Makanan :</label><br>
+                <input type="text" name="Harga" id="Harga" required><br><br>
             </li>
             <br>
             <button type="submit" name="tambah">Tambah Data!</button>
             <button type="submit">
-                <a href="index.php">Kembali</a>
+                <a href="index.php" style="text-decoration: none; color: black;">Kembali</a>
             </button>
         </ul>
 
