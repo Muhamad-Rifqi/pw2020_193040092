@@ -10,7 +10,7 @@ if (isset($_SESSION['username']))
 }
 
 // Login
-if (isset($_POST['submit']))
+if (isset($_POST['submit'])) {
 {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -18,38 +18,22 @@ if (isset($_POST['submit']))
 }
 
 // Mencocokan username dan password
-if (mysqli_num_rows($cek_user) > 0)
-{
+if (mysqli_num_rows($cek_user) > 0) {
     $row = mysqli_fetch_assoc($cek_user);
-    if ($password == $row['password'])
-    {
+    if ($password == $row['password']) {
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['hash'] = $row['id'];
     }
-    if ($row['id'] == $_SESSION['hash'])
-    {
+    if ($row['id'] == $_SESSION['hash']) {
         header ("location: admin.php");
         die;
     }
     header ("location: ../index.php");
     die;
-}
-$error = true;
+  }
+  $error = true;
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <form action="" method="post">
 <?php if (isset($error)) : ?>
