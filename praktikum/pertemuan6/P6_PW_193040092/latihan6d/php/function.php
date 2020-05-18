@@ -58,11 +58,11 @@
     $harga = htmlspecialchars($data['Harga']);
 
     $queryubah = "UPDATE makanan SET 
-            nama = '$Nama',
-            gambar = '$Gambar',
-            asal = '$Asal',
-            deskripsi = '$Deskripsi',
-            harga = '$Harga'
+            nama = '$nama',
+            gambar = '$gambar',
+            asal = '$asal',
+            deskripsi = '$deskripsi',
+            harga = '$harga'
             WHERE  id = '$id' ";
 
     mysqli_query($conn, $queryubah);
