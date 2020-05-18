@@ -24,8 +24,8 @@
     {
         $conn = koneksi();
 
-        $nama = htmlspecialchars($data['Nama']);
         $gambar = htmlspecialchars($data['Gambar']);
+        $nama = htmlspecialchars($data['Nama']);
         $asal = htmlspecialchars($data['Asal']);
         $deskripsi = htmlspecialchars($data['Deskripsi']);
         $harga = htmlspecialchars($data['Harga']);

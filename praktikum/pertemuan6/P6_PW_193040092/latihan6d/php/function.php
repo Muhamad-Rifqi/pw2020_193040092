@@ -20,24 +20,28 @@
         return $rows;
     }
 
+
+// Fungsi tambah
      function tambah($data)
     {
         $conn = koneksi();
 
-        $nama = htmlspecialchars($data['Nama']);
         $gambar = htmlspecialchars($data['Gambar']);
+        $nama = htmlspecialchars($data['Nama']);
         $asal = htmlspecialchars($data['Asal']);
         $deskripsi = htmlspecialchars($data['Deskripsi']);
         $harga = htmlspecialchars($data['Harga']);
 
         $query = "INSERT INTO makanan
                         VALUES
-                        ('', '$nama', '$gambar', '$asal', '$deskripsi', '$harga')";
+                        ('', '$gambar', '$nama', '$asal', '$deskripsi', '$harga')";
         mysqli_query($conn, $query);
 
         return mysqli_affected_rows($conn);
     }
 
+
+// Fungsi Hapus
     function hapus($id)
     {
         $conn = koneksi();
@@ -46,23 +50,26 @@
         return mysqli_affected_rows($conn);
     }
 
+    
+// Fungsi Ubah Data
     function ubah($data)
 {
-    $global = $conn;
+    $conn = koneksi();
 
     $id = $data['id'];
-    $nama = htmlspecialchars($data['Nama']);
     $gambar = htmlspecialchars($data['Gambar']);
+    $nama = htmlspecialchars($data['Nama']);
     $asal = htmlspecialchars($data['Asal']);
     $deskripsi = htmlspecialchars($data['Deskripsi']);
     $harga = htmlspecialchars($data['Harga']);
 
-    $queryubah = "UPDATE makanan SET 
-            nama = '$nama',
-            gambar = '$gambar',
-            asal = '$asal',
-            deskripsi = '$deskripsi',
-            harga = '$harga'
+    $queryubah = "UPDATE makanan
+             SET 
+            Gambar = '$gambar',
+            Nama = '$nama',
+            Asal = '$asal',
+            Deskripsi = '$deskripsi',
+            Harga = '$harga'
             WHERE  id = '$id' ";
 
     mysqli_query($conn, $queryubah);

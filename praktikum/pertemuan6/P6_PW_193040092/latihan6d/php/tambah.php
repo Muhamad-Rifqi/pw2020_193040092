@@ -4,12 +4,12 @@ require 'function.php';
 if (isset($_POST['tambah'])) {
     if (tambah($_POST) > 0) {
         echo "<script>
-                    alert('Data berhasil diubah!');
+                    alert('Data berhasil ditambahkan!');
                     document.location.href = 'admin.php';
                 </script>";
     } else {
         echo "<script>
-                    alert('Data gagal diubah!');
+                    alert('Data gagal ditambahkan!');
                     document.location.href = 'admin.php';
                 </script>";
     }
@@ -48,7 +48,7 @@ if (isset($_POST['tambah'])) {
             <br>
             <button type="submit" name="tambah">Tambah Data!</button>
             <button type="submit">
-                <a href="index.php">Kembali</a>
+                <a href="admin.php">Kembali</a>
             </button>
         </ul>
 

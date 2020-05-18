@@ -5,7 +5,7 @@ $id = $_GET['id'];
 $m = query("SELECT * FROM makanan WHERE id = $id")[0];
 
 if (isset($_POST['ubah'])) {
-    if (tambah($_POST) > 0) {
+    if (ubah($_POST) > 0) {
         echo "<script>
                     alert('Data berhasil diubah!');
                     document.location.href = 'admin.php';
@@ -51,9 +51,7 @@ if (isset($_POST['ubah'])) {
             </li>
             <br>
             <button type="submit" name="ubah">Ubah Data!</button>
-            <button type="submit">
-                <a href="index.php">Kembali</a>
-            </button>
+            <button type="submit"><a href="admin.php">Kembali</a></button>
         </ul>
 
     </form>    
