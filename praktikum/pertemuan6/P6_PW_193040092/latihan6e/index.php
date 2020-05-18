@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 <div class="container">
