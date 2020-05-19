@@ -88,5 +88,5 @@ if (mysqli_num_rows($cek_user) > 0) {
 </form>
 
 <div class="registrasi">
-    <p>Belum Punya akun? Registrasi<a href="registrasi.php">Disini</a></p>
+    <p>Belum Punya akun? Registrasi <a href="registrasi.php">Disini</a></p>
 </div>
