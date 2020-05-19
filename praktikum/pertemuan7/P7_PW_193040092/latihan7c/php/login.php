@@ -13,7 +13,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['hash'])){
     $row = mysqli_fetch_assoc($result);
 
     // cek cookie dan username
-    if ($hash === hash('hash256', $row['id'], false)){
+    if ($hash === hash('sha256', $row['id'], false)){
         $_SESSION['username'] = $row['username'];
         header("location: admin.php");
         exit;
