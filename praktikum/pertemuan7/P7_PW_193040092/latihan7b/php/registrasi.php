@@ -1,16 +1,16 @@
 <?php 
-require 'function.php'
+require 'function.php';
 
 if (isset($_POST["register"])) {
     if (registrasi($_POST) > 0) {
         echo "<script>
                 alert('Registrasi Berhasil');
                 document.location.href = 'login.php';
-                </script>"
+                </script>";
     } else {
         echo "<script>
         alert('Registrasi Berhasil');
-        </script>"
+        </script>";
     }
 }
 ?>
