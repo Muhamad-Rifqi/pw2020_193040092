@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Login</title>
+</head>
+<body>
+    
 <?php 
 session_start();
 require 'function.php';
@@ -90,3 +99,7 @@ if (mysqli_num_rows($cek_user) > 0) {
 <div class="registrasi">
     <p>Belum Punya akun? Registrasi <a href="registrasi.php">Disini</a></p>
 </div>
+
+</body>
+</html>
+
