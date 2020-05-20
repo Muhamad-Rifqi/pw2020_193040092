@@ -1,11 +1,4 @@
 <?php
-
-session_start();
-if (isset($_SESSION['username'])){
-	header("location: login.php");
-	exit;
-}
-
 require 'function.php';
 $makanan = query("SELECT * FROM makanan");
 
@@ -22,14 +15,14 @@ if (isset($_GET['cari'])) {
 	<link rel="stylesheet" type="text/css" href="../css/styleadmin.css">
 </head>
 <body>
-	<div class="container">
-	<div class="add"><a href="tambah.php">Tambah Data</a></div>
-		<form action="" method="get">
-			<input type="text" name="keyword" autofocus>
-			<button type="submit" name="cari">Cari!</button>
+  <div class="container">
+  	<div class="add"><a href="tambah.php">Tambah Data</a></div>
+	  	<form action="" method="get">
+		  <input type="text" name="keyword" autofocus>
+		  <button type="submit" name="cari">Cari!</button>
 		</form>
-	<table border="1" cellpadding="13" cellspacing="0">
-		<tr>
+  	<table border="1" cellpadding="13" cellspacing="0">
+  		<tr>
 			<th>#</th>
 			<th>Opsi</th>
 			<th>Gambar</th>
@@ -42,7 +35,7 @@ if (isset($_GET['cari'])) {
 	<?php if (empty($makanan)) : ?>
 	<tr>
 		<td colspan="7">
-			<h1>Data tidak di temukan</h1>
+		 	<h1>Data tidak di temukan</h1>
 		</td>
 	</tr>
 
@@ -71,6 +64,6 @@ if (isset($_GET['cari'])) {
 		<div class="logout">
 			<a href="logout.php">Logout</a>
 		</div>
-	</table>
+  	</table>
 </body>
 </html>

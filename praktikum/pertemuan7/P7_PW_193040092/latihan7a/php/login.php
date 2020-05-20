@@ -11,11 +11,9 @@ if (isset($_SESSION['username']))
 
 // Login
 if (isset($_POST['submit'])) {
-{
     $username = $_POST['username'];
     $password = $_POST['password'];
     $cek_user = mysqli_query(koneksi(), "SELECT * FROM user WHERE username = '$username'");
-}
 
 // Mencocokan username dan password
 if (mysqli_num_rows($cek_user) > 0) {

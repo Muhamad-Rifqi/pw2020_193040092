@@ -1,4 +1,4 @@
-<?php
+    <?php
     // Function Untuk melakukan koneksi ke database
     function koneksi(){
         $conn = mysqli_connect("localhost", "root", "") or die ("Koneksi ke Database Gagal");

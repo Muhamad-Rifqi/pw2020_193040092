@@ -1,11 +1,4 @@
 <?php
-
-session_start();
-if (isset($_SESSION['username'])){
-	header("location: login.php");
-	exit;
-}
-
 require 'function.php';
 
 if (isset($_POST['tambah'])) {
