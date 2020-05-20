@@ -1,4 +1,13 @@
-p, a{
+@font-face {
+  font-family: "abril";
+  src: url('../font/abril-Regular.ttf');
+}
+
+.judul {
+  font-family: "abril";
+}
+
+/* p, a{
   font-family: arial;
   color: salmon;
   text-decoration: 
@@ -27,4 +36,4 @@ h1{
 	height: 200px;
   margin-left: 110px;
   border-radius: 25px;
-}
+} */
