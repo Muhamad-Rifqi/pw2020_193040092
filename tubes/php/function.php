@@ -1,8 +1,8 @@
     <?php
     // Function Untuk melakukan koneksi ke database
     function koneksi(){
-        $conn = mysqli_connect("localhost", "root", "") or die ("Koneksi ke Database Gagal");
-        mysqli_select_db($conn, "tubes_193040092") or die ("Database Salah");
+        $conn = mysqli_connect("localhost", "pw19092", "#Akun#193040092#") or die ("Koneksi ke Database Gagal");
+        mysqli_select_db($conn, "pw193092_tubes_193040092") or die ("Database Salah");
 
         return $conn;
     }
